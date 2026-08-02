@@ -6,10 +6,18 @@ const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector(".nav");
 function closeNav(){
   if (!nav || !menuBtn) return;
-  nav.classList.remove("open");
+  if (nav.classList.contains("closing")) return;
+  nav.classList.add("closing");
   menuBtn.setAttribute("aria-expanded", "false");
   menuBtn.setAttribute("aria-label", "開啟選單");
-  document.body.style.overflow = "";
+  // Wait for CSS fade-out then fully hide + restore scroll
+  const finish = () => {
+    nav.classList.remove("open", "closing");
+    document.body.style.overflow = "";
+  };
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) { finish(); return; }
+  setTimeout(finish, 380);
 }
 function openNav(){
   if (!nav || !menuBtn) return;
