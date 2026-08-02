@@ -266,6 +266,25 @@ h1 .accent{
 .hero-meta span{font-size:13px;color:var(--text-mute);margin-top:4px}
 
 /* ======= BUTTONS ======= */
+/* Arrow slide on hover — works inside any button / link */
+.arrow{
+  display:inline-block;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+}
+.btn:hover .arrow,
+.case-more:hover .arrow,
+a:hover > .arrow{transform:translateX(6px)}
+
+/* Icon buttons: slide the SVG icon on hover */
+.header-cta svg,
+.btn-wa svg,
+.nav-cta svg{
+  transition:transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.header-cta:hover svg,
+.btn-wa:hover svg{transform:translateX(3px)}
+
 .btn{
   display:inline-flex;align-items:center;gap:10px;
   padding:12px 22px;border-radius:999px;font-size:14px;font-weight:600;
