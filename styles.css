@@ -127,6 +127,35 @@ a.nav-info-value.nav-info-link{color:var(--text)}
 a.nav-info-value.nav-info-link:hover{color:var(--accent)}
 
 @keyframes navFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes navItemIn{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Stagger children on open */
+.nav.open .nav-links a,
+.nav.open .nav-info-block{
+  opacity:0;
+  animation:navItemIn .5s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.nav.open .nav-links a:nth-child(1){animation-delay:.08s}
+.nav.open .nav-links a:nth-child(2){animation-delay:.13s}
+.nav.open .nav-links a:nth-child(3){animation-delay:.18s}
+.nav.open .nav-links a:nth-child(4){animation-delay:.23s}
+.nav.open .nav-links a:nth-child(5){animation-delay:.28s}
+.nav.open .nav-links a:nth-child(6){animation-delay:.33s}
+.nav.open .nav-links a:nth-child(7){animation-delay:.38s}
+.nav.open .nav-links a:nth-child(8){animation-delay:.43s}
+.nav.open .nav-links a:nth-child(9){animation-delay:.48s}
+.nav.open .nav-links a:nth-child(10){animation-delay:.53s}
+.nav.open .nav-info-block:nth-child(1){animation-delay:.30s}
+.nav.open .nav-info-block:nth-child(2){animation-delay:.38s}
+.nav.open .nav-info-block:nth-child(3){animation-delay:.46s}
+.nav.open .nav-info-block:nth-child(4){animation-delay:.54s}
+@media (prefers-reduced-motion:reduce){
+  .nav.open .nav-links a,
+  .nav.open .nav-info-block{animation:none;opacity:1}
+}
 
 /* Header layout adjustments */
 .site-header .header-cta{
