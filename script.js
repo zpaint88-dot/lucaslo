@@ -1,18 +1,31 @@
 // Year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Mobile menu
+// Nav overlay (unified hamburger for all breakpoints)
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.querySelector(".nav");
+function closeNav(){
+  if (!nav || !menuBtn) return;
+  nav.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded", "false");
+  menuBtn.setAttribute("aria-label", "開啟選單");
+  document.body.style.overflow = "";
+}
+function openNav(){
+  if (!nav || !menuBtn) return;
+  nav.classList.add("open");
+  menuBtn.setAttribute("aria-expanded", "true");
+  menuBtn.setAttribute("aria-label", "關閉選單");
+  document.body.style.overflow = "hidden";
+}
 if (menuBtn && nav) {
   menuBtn.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(open));
+    if (nav.classList.contains("open")) closeNav(); else openNav();
   });
-  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-  }));
+  nav.querySelectorAll("a").forEach(a => a.addEventListener("click", closeNav));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("open")) closeNav();
+  });
 }
 
 // Reveal on scroll
