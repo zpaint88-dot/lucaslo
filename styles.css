@@ -486,6 +486,7 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
   filter:blur(6px);
   transition-duration:1s;
 }
+.section-head.reveal.in{transform:none;filter:blur(0)}
 
 @media (prefers-reduced-motion:reduce){
   .reveal,.section-head.reveal{
