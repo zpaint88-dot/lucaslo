@@ -41,9 +41,48 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   transition:background .3s ease,border-color .3s ease;
 }
 .brand{display:flex;align-items:center;gap:10px;color:var(--text);font-family:var(--font-en);font-weight:700;letter-spacing:.06em}
-.brand-mark{width:32px;height:32px;color:#0a0a0a;background:transparent;border-radius:8px;overflow:hidden}
-.brand-mark rect{fill:var(--accent)}
-.brand-text{font-size:18px;letter-spacing:.14em}
+.brand-mark{width:32px;height:32px;color:#0a0a0a;background:transparent;border-radius:8px;overflow:visible}
+.brand-rect{
+  fill:var(--accent);
+  transform-origin:50% 50%;
+  transform-box:fill-box;
+  animation:brandRectIn .55s cubic-bezier(.2,.7,.2,1) both;
+}
+.brand-z{
+  stroke:#0a0a0a;
+  stroke-dasharray:80;
+  stroke-dashoffset:80;
+  animation:brandZDraw .9s cubic-bezier(.6,.1,.2,1) .35s both;
+}
+.brand-text{
+  font-size:18px;letter-spacing:.14em;
+  display:inline-flex;
+}
+.brand-text > span{
+  display:inline-block;opacity:0;transform:translateY(6px);
+  animation:brandLetterIn .5s cubic-bezier(.2,.7,.2,1) both;
+}
+.brand-text > span:nth-child(1){animation-delay:.55s}
+.brand-text > span:nth-child(2){animation-delay:.62s}
+.brand-text > span:nth-child(3){animation-delay:.69s}
+.brand-text > span:nth-child(4){animation-delay:.76s}
+.brand-text > span:nth-child(5){animation-delay:.83s}
+.brand-text > span:nth-child(6){animation-delay:.90s}
+
+@keyframes brandRectIn{
+  0%{opacity:0;transform:scale(.55) rotate(-6deg)}
+  100%{opacity:1;transform:scale(1) rotate(0)}
+}
+@keyframes brandZDraw{
+  from{stroke-dashoffset:80}
+  to{stroke-dashoffset:0}
+}
+@keyframes brandLetterIn{
+  to{opacity:1;transform:translateY(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .brand-rect,.brand-z,.brand-text > span{animation:none;opacity:1;transform:none;stroke-dashoffset:0}
+}
 .nav{display:flex;gap:28px;align-items:center;font-size:14px}
 .nav a{color:var(--text-dim);transition:color .2s ease}
 .nav a:hover{color:var(--text)}
