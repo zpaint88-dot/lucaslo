@@ -943,3 +943,84 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
   .gallery-item{aspect-ratio:4/3}
   .gallery-item-large{grid-row:auto;grid-column:auto;aspect-ratio:16/10}
 }
+
+/* ======= STICKY WHATSAPP FLOAT ======= */
+.wa-float{
+  position:fixed;
+  right:24px;bottom:24px;
+  z-index:80;
+  display:inline-flex;align-items:center;gap:0;
+  padding:14px;
+  background:#25D366;color:#fff;
+  border-radius:999px;
+  box-shadow:0 10px 30px rgba(37,211,102,.35), 0 4px 10px rgba(0,0,0,.25);
+  opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;
+  transition:
+    opacity .35s ease,
+    transform .35s cubic-bezier(.2,.7,.2,1),
+    padding .3s cubic-bezier(.2,.7,.2,1),
+    background .25s ease,
+    box-shadow .25s ease;
+}
+.wa-float.visible{
+  opacity:1;transform:translateY(0) scale(1);pointer-events:auto;
+}
+.wa-float svg{
+  flex-shrink:0;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.wa-float-label{
+  display:inline-block;
+  max-width:0;
+  overflow:hidden;white-space:nowrap;
+  font-family:var(--font-en);font-weight:600;font-size:14px;
+  letter-spacing:.02em;
+  opacity:0;
+  transition:max-width .35s cubic-bezier(.2,.7,.2,1), opacity .25s ease, margin .3s ease;
+  margin-left:0;
+}
+.wa-float:hover{
+  padding:14px 20px 14px 14px;
+  background:#1da851;
+  box-shadow:0 14px 36px rgba(37,211,102,.45), 0 6px 14px rgba(0,0,0,.3);
+}
+.wa-float:hover .wa-float-label{
+  max-width:180px;opacity:1;margin-left:10px;
+}
+.wa-float:hover svg{transform:scale(1.08)}
+
+/* Pulse ring behind icon */
+.wa-float::before{
+  content:"";position:absolute;inset:0;
+  border-radius:inherit;
+  background:#25D366;
+  opacity:.4;
+  z-index:-1;
+  animation:waPulse 2.2s ease-out infinite;
+}
+@keyframes waPulse{
+  0%{transform:scale(1);opacity:.4}
+  70%{transform:scale(1.5);opacity:0}
+  100%{transform:scale(1.5);opacity:0}
+}
+
+/* Hide when nav overlay is open */
+body:has(.nav.open) .wa-float,
+body:has(.nav.closing) .wa-float{
+  opacity:0;pointer-events:none;transform:translateY(20px) scale(.9);
+}
+
+/* Mobile: slightly smaller, tuck into corner */
+@media (max-width:600px){
+  .wa-float{
+    right:16px;bottom:16px;
+    padding:12px;
+  }
+  .wa-float svg{width:24px;height:24px}
+  .wa-float:hover{padding:12px 18px 12px 12px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .wa-float,.wa-float::before{animation:none}
+  .wa-float::before{display:none}
+}

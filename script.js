@@ -36,6 +36,17 @@ if (menuBtn && nav) {
   });
 }
 
+// Sticky WhatsApp float button visibility
+const waFloat = document.getElementById("waFloat");
+if (waFloat) {
+  const toggleWa = () => {
+    if (window.scrollY > 400) waFloat.classList.add("visible");
+    else waFloat.classList.remove("visible");
+  };
+  toggleWa();
+  window.addEventListener("scroll", toggleWa, { passive: true });
+}
+
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
