@@ -284,6 +284,31 @@ a.nav-info-value.nav-info-link:hover{color:var(--accent)}
   mask-image:radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
 }
 .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;width:100%}
+
+/* Hero entrance animation */
+.hero-title{display:block}
+.hero-title .hw{
+  display:inline-block;
+  opacity:0;transform:translateY(24px);
+  filter:blur(6px);
+  animation:heroWordIn .8s cubic-bezier(.2,.7,.15,1) forwards;
+  animation-delay:var(--delay,0s);
+  will-change:opacity,transform,filter;
+}
+.hero-fade{
+  opacity:0;transform:translateY(14px);
+  animation:heroFadeUp .7s cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay:var(--delay,0s);
+}
+@keyframes heroWordIn{
+  to{opacity:1;transform:translateY(0);filter:blur(0)}
+}
+@keyframes heroFadeUp{
+  to{opacity:1;transform:translateY(0)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-title .hw,.hero-fade{animation:none;opacity:1;transform:none;filter:none}
+}
 .eyebrow{
   font-family:var(--font-en);font-size:12px;letter-spacing:.28em;
   color:var(--accent);text-transform:uppercase;margin:0 0 20px;font-weight:600;
