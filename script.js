@@ -47,14 +47,32 @@ if (waFloat) {
   window.addEventListener("scroll", toggleWa, { passive: true });
 }
 
-// Reveal on scroll
+// Reveal on scroll — refined blur + scale + stagger
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
   });
-}, { threshold: 0.12 });
-document.querySelectorAll(".service-card, .work, .process-list li, .about-grid > *, .section-head").forEach(el => {
+}, { threshold: 0.12, rootMargin: "0px 0px -80px 0px" });
+
+// Individual reveal targets (section headings, standalone blocks)
+document.querySelectorAll(
+  ".section-head, .about-grid > *, .cases-cta, .reviews-cta, .contact-info, .contact-form-wrap"
+).forEach(el => {
   el.classList.add("reveal"); io.observe(el);
+});
+
+// Grid/list groups: stagger their children with --i index
+document.querySelectorAll(
+  ".services-grid, .works-grid, .process-list, .brands-grid, .pricing-grid, .cases-grid, .gallery-grid, .reviews-grid"
+).forEach(group => {
+  Array.from(group.children).forEach((child, i) => {
+    child.classList.add("reveal");
+    child.style.setProperty("--i", i);
+    io.observe(child);
+  });
+  // Also mark the container so CSS can trigger stagger via .in on parent (fallback)
+  io.observe(group);
+  group.classList.add("reveal-group");
 });
 
 // Contact form → WhatsApp

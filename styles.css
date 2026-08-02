@@ -462,8 +462,36 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
 .site-footer p{margin:4px 0 0}
 
 /* ======= REVEAL ANIM ======= */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
+.reveal{
+  opacity:0;
+  transform:translateY(24px) scale(.985);
+  filter:blur(4px);
+  transition:
+    opacity .9s cubic-bezier(.2,.7,.15,1),
+    transform .9s cubic-bezier(.2,.7,.15,1),
+    filter .7s cubic-bezier(.2,.7,.15,1);
+  will-change:opacity,transform,filter;
+}
+.reveal.in{opacity:1;transform:none;filter:blur(0)}
+
+/* Stagger revealed grid children by their --i index (set via JS).
+   min() caps total delay at ~420ms so long grids don't feel sluggish. */
+.reveal-group > .reveal{
+  transition-delay:min(calc(var(--i,0) * 70ms), 420ms);
+}
+
+/* Section-head slightly slower, more cinematic */
+.section-head.reveal{
+  transform:translateY(30px) scale(.98);
+  filter:blur(6px);
+  transition-duration:1s;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal,.section-head.reveal{
+    opacity:1;transform:none;filter:none;transition:none;
+  }
+}
 
 /* ======= FOCUS ======= */
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
