@@ -158,12 +158,17 @@ a.nav-info-value.nav-info-link:hover{color:var(--accent)}
   }
 }
 
-/* Small mobile: hide info in overlay to focus on nav */
-@media (max-width:600px){
-  .nav{padding:90px var(--pad) 40px;gap:36px}
+/* Mobile & tablet portrait: top-align so content scrolls naturally */
+@media (max-width:819px){
+  .nav{
+    align-content:start;
+    padding:90px var(--pad) 60px;
+    gap:36px;
+  }
   .nav-info{gap:22px}
   .nav-info-value{font-size:14px}
   .nav-links a{font-size:clamp(24px,7vw,32px);padding:12px 0}
+  .nav-links .nav-cta{margin-top:24px}
 }
 
 /* ======= HERO ======= */
