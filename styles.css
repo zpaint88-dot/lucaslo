@@ -1563,3 +1563,29 @@ body:has(.nav.closing) .wa-float{
   .hero-pill{white-space:normal;font-size:.82rem;padding:10px 14px;line-height:1.35;gap:.55rem}
   .hero-pill-text{white-space:normal}
 }
+
+/* Service brands: logo row variant (PPF card) */
+.service-brands--logos{
+  gap:22px;
+  align-items:center;
+  flex-wrap:nowrap;
+  overflow:hidden;
+}
+.service-brands--logos img{
+  height:18px;
+  width:auto;
+  max-width:100%;
+  opacity:.55;
+  transition:opacity .3s ease,transform .3s ease;
+  object-fit:contain;
+}
+.service-card:hover .service-brands--logos img{opacity:.9}
+.service-brands--logos img[alt="NICE VINYL"]{height:16px}
+.service-brands--logos img[alt="3M"]{height:20px}
+.service-brands--logos img[alt="XPEL"]{height:14px}
+@media (max-width:520px){
+  .service-brands--logos{gap:16px}
+  .service-brands--logos img[alt="NICE VINYL"]{height:13px}
+  .service-brands--logos img[alt="3M"]{height:17px}
+  .service-brands--logos img[alt="XPEL"]{height:12px}
+}
