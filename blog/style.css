@@ -98,6 +98,9 @@ ul[role="list"]{list-style:none}
 .article-body li{font-size:var(--text-base);color:var(--text-muted)}
 .article-body strong{color:var(--text);font-weight:600}
 .article-body a{color:var(--primary);font-weight:600;text-decoration:underline;text-decoration-color:color-mix(in oklab,var(--primary) 40%,transparent)}
+.article-figure{margin:var(--space-8) 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);background:var(--surface-alt,var(--surface-warm))}
+.article-figure img{width:100%;height:auto;display:block;max-height:600px;object-fit:cover}
+.article-figure figcaption{padding:.75rem 1rem;font-size:var(--text-sm);color:var(--text-muted);text-align:center;background:var(--surface-warm);border-top:1px solid var(--border)}
 .article-body table{width:100%;border-collapse:collapse;margin:var(--space-6) 0;font-size:var(--text-sm);background:var(--surface);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm)}
 .article-body th,.article-body td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
 .article-body th{background:var(--surface-warm);color:var(--text);font-weight:700}
