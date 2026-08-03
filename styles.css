@@ -374,16 +374,80 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
 .section-lede{color:var(--text-dim);font-size:17px;margin:0}
 
 /* ======= SERVICES ======= */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;
+  perspective:1000px;
+}
 .service-card{
+  position:relative;
   padding:32px;border:1px solid var(--line);border-radius:var(--radius);
   background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
-  transition:border-color .25s ease,transform .25s ease,background .25s ease;
+  transform-style:preserve-3d;
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .3s ease,
+    transform .5s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+  overflow:hidden;
 }
-.service-card:hover{border-color:var(--accent);transform:translateY(-4px);background:linear-gradient(180deg,rgba(244,208,63,.06),rgba(255,255,255,0))}
-.service-icon{width:52px;height:52px;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:12px}
+/* 3D tilt only after reveal has landed — avoids fighting .reveal transform */
+.service-card.reveal.in,
+.service-card:not(.reveal){
+  transform:
+    perspective(1000px)
+    rotateX(var(--rx,0deg))
+    rotateY(var(--ry,0deg))
+    translateY(var(--ty,0px))
+    translateZ(0);
+}
+.service-card.tilting{
+  transition:
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .3s ease,
+    transform .12s ease-out;
+}
+.service-card:hover{
+  border-color:var(--accent);
+  background:linear-gradient(180deg,rgba(244,208,63,.06),rgba(255,255,255,0));
+  box-shadow:0 20px 40px -20px rgba(244,208,63,.25), 0 8px 20px -10px rgba(0,0,0,.4);
+}
+
+/* Cursor-following shine — uses CSS vars set by JS */
+.service-card::before{
+  content:"";position:absolute;inset:0;
+  border-radius:inherit;pointer-events:none;
+  background:radial-gradient(
+    circle 220px at var(--mx,50%) var(--my,50%),
+    rgba(244,208,63,.10),
+    transparent 60%
+  );
+  opacity:0;
+  transition:opacity .3s ease;
+  z-index:0;
+}
+.service-card:hover::before{opacity:1}
+
+/* Push content above shine layer */
+.service-card > *{position:relative;z-index:1}
+
+.service-icon{
+  width:52px;height:52px;color:var(--accent);margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:12px;
+  transform:translateZ(30px);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .25s ease;
+}
+.service-card:hover .service-icon{border-color:var(--accent)}
 .service-icon svg{width:28px;height:28px}
-.service-card p{color:var(--text-dim);margin:0;font-size:15px}
+.service-card h3{transform:translateZ(20px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.service-card p{color:var(--text-dim);margin:0;font-size:15px;transform:translateZ(10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+
+@media (prefers-reduced-motion:reduce){
+  .service-card,.service-icon,.service-card h3,.service-card p{transform:none !important;transition:border-color .2s ease,background .2s ease}
+  .service-card::before{display:none}
+}
 
 /* ======= WORKS ======= */
 .works-grid{
