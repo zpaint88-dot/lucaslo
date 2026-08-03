@@ -52,10 +52,24 @@
   </section>
 
   <section class="article-body">
-    <div class="container container-narrow">
+    <div class="article-layout">
+      <aside class="toc reveal visible" aria-label="目錄">
+        <div class="toc-title">本文目錄</div>
+        <ol>
+          <li><a href="#tow-in">拖車入場</a></li>
+          <li><a href="#strip">拆件見骨</a></li>
+          <li><a href="#refit">修復中期</a></li>
+          <li><a href="#reassemble">組裝交車</a></li>
+          <li><a href="#compare">Before/After</a></li>
+          <li><a href="#notes">事故車注意</a></li>
+          <li><a href="#price">價錢參考</a></li>
+          <li><a href="#zpaint">ZPAINT 做法</a></li>
+        </ol>
+      </aside>
+      <div class="article-main">
       <p>今次呢個 case 係一部 Tesla Model S — 車主晚上撞咗車頭，泵把、燈罩、水箱框架全部撞爛，拖車入場嗰晚車身仲有大範圍嘅刮花同凹陷。呢一篇 blog 就係想同大家 share 由拖車入廠、拆到見骨、修復中期到最後交車嘅完整過程。事故車修復唔係「噴翻返」咁簡單 — 涉及鈑金、換件、色調配、烘乾、質檢一整條流程。</p>
 
-      <h2>第一階段：拖車入場</h2>
+      <h2 id="tow-in">第一階段：拖車入場</h2>
       <p>車主當晚 WhatsApp 聯絡我哋，直接叫拖車送嚟深水埗店。夜晚見到部車：<strong>前泵把整個爆脫、右前輪拱撕裂、頭燈框穿窿、水箱冷卻系統露出</strong>。撞擊力大到連車頭嘅結構橫樑都有變形。</p>
       <figure class="article-figure">
         <img src="https://zpaintcar.com/images/real/model-s-crash/01-tow-arrival.jpg" alt="Tesla Model S 拖車運返 ZPAINT 深水埗店，車頭撞爛" loading="lazy" />
@@ -69,7 +83,7 @@
       </ul>
       <p>我哋第一步係全車 scan、影相入 file、幫車主申報保險。</p>
 
-      <h2>第二階段：拆件見骨</h2>
+      <h2 id="strip">第二階段：拆件見骨</h2>
       <p>確認唔涉及高壓電同氣壓系統受損之後，開始拆件。前泵把、頭燈、水箱框、防撞樑、部分內裡塑膠件都要拆出嚟 — 呢一步嘅目的係：</p>
       <ol>
         <li><strong>睇清楚點打</strong> — 有時外觀睇落只係泵把爛，拆完先發現內裡防撞樑扭曲</li>
@@ -82,7 +96,7 @@
       </figure>
       <p>今次個 case 我哋換咗前泵把總成、頭燈框、防撞樑，鈑金上有 4 個位要打拉直 — 主要係前輪拱同 A 柱下方。全部完成先入下一步。</p>
 
-      <h2>第三階段：修復中期（Refit + Paint Prep）</h2>
+      <h2 id="refit">第三階段：修復中期（Refit + Paint Prep）</h2>
       <p>換件裝返之後，開始準備噴漆。呢個階段係最花時間，因為：</p>
       <ul>
         <li>新泵把出廠時係<strong>灰色底漆</strong>，需要打底、上原廠色再罩清漆</li>
@@ -106,7 +120,7 @@
         <figcaption>車尾廂內部準備 — 車牌預先拆下，內部塑膠件用報紙同膠袋遮蓋</figcaption>
       </figure>
 
-      <h2>第四階段：組裝 + 交車</h2>
+      <h2 id="reassemble">第四階段：組裝 + 交車</h2>
       <p>焗漆完等油完全 cure（一般要 24-48 小時），開始裝返所有拆下嘅件：頭燈、Tesla T logo、輪弧內襯、後視鏡、感應器等等。每一件裝完都要對位置、對縫隙 — 呢個係最考驗師傅細心程度嘅步驟。</p>
       <p>裝完之後，車入洗車位做清潔同去油，再入質檢。</p>
       <figure class="article-figure">
@@ -119,7 +133,7 @@
       </figure>
       <p>今次由拖車入廠到交車一共 <strong>約兩星期</strong>（視乎入件時間），車主收車嗰陣覺得同新車一樣 — 唔會見到接口位、唔會見到色差、唔會有噴漆點粒。呢個係我哋想達到嘅標準。</p>
 
-      <h2>Before &amp; After — 拖車入場 vs 交車前</h2>
+      <h2 id="compare">Before &amp; After — 拖車入場 vs 交車前</h2>
       <p>拉動中間分隔線，睇下同一部 Tesla Model S 由撞爛到修復完成嘅對比：</p>
       <figure class="reveal">
         <div class="compare-slider" data-compare-slider aria-label="Before after 對比 slider — 左邊拖車入場撞爛，右邊交車前修復完成">
@@ -137,7 +151,7 @@
         <figcaption class="compare-caption">左：拖車入場，前泵把爆脫、水箱外露　　右：交車前，車頭完全復原</figcaption>
       </figure>
 
-      <h2>Tesla 事故車修復需要留意咩？</h2>
+      <h2 id="notes">Tesla 事故車修復需要留意咩？</h2>
       <ul>
         <li><strong>唔好隨便揀便宜舖</strong> — Tesla 鋁車身、電池、感應器嘅處理都要專門知識</li>
         <li><strong>用原廠件 vs 副廠件</strong> — 我哋一律建議用原廠件，尤其係燈組同水箱系統，副廠件配合度會差</li>
@@ -145,11 +159,12 @@
         <li><strong>校準 Autopilot</strong> — 修復完頭燈框、bumper 或者換過相機，一定要做校準先可以還車</li>
       </ul>
 
-      <h2>價錢參考</h2>
+      <h2 id="price">價錢參考</h2>
       <p>Tesla 事故車修復嘅價錢視乎撞擊嚴重程度、換件範圍、鈑金複雜度而定。今次個 case 收費由 <strong>HK$25,000 起</strong>（唔連換原廠件費用），實際報價要車主 WhatsApp 傳現場相俾我哋，或者拖車入場之後我哋現場評估。輕微碰撞（局部補漆同泵把換件）由 <strong>HK$3,500 起</strong>。詳細可以睇<a href="https://zpaintcar.com/#pricing">價目表</a>。</p>
 
-      <h2>ZPAINT 點做</h2>
+      <h2 id="zpaint">ZPAINT 點做</h2>
       <p><a href="https://zpaintcar.com">ZPAINT</a>係深水埗鴨寮街 29 號嘅專門汽車貼膜、鍍膜、維修同焗噴油舖，超過 10 年經驗，處理過大量 Tesla、Porsche、McLaren、Lamborghini 事故車修復同改色 case。事故車嘅拖車、拆件、鈑金、噴漆、質檢全部我哋一站處理。詳細作品可睇 <a href="https://zpaintcar.com/#showcase">案例展示</a> 或 <a href="https://www.instagram.com/zpaint_car/" target="_blank" rel="noopener">Instagram @zpaint_car</a>。</p>
+      </div>
     </div>
   </section>
 
