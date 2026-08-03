@@ -469,8 +469,32 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
 .service-card h3{transform:translateZ(20px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .service-card p{color:var(--text-dim);margin:0;font-size:15px;transform:translateZ(10px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 
+.service-brands{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--line);
+  transform:translateZ(15px);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.service-brands span{
+  font-family:var(--font-en);
+  font-size:10px;
+  letter-spacing:.1em;
+  padding:4px 9px;
+  color:var(--text-dim);
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  border-radius:999px;
+  transition:color .25s ease,border-color .25s ease,background .25s ease;
+}
+.service-card:hover .service-brands span{
+  color:var(--accent);
+  border-color:rgba(244,208,63,.4);
+  background:rgba(244,208,63,.08);
+}
+
 @media (prefers-reduced-motion:reduce){
-  .service-card,.service-icon,.service-card h3,.service-card p{transform:none !important;transition:border-color .2s ease,background .2s ease}
+  .service-card,.service-icon,.service-card h3,.service-card p,.service-brands{transform:none !important;transition:border-color .2s ease,background .2s ease}
   .service-card::before{display:none}
 }
 
