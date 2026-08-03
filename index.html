@@ -519,6 +519,18 @@
   <p class="copy">© <span id="year"></span> ZPAINT. Hong Kong. All rights reserved.</p>
 </footer>
 
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="相集圖片預覽" hidden>
+  <button class="lb-close" type="button" aria-label="關閉">✕</button>
+  <button class="lb-prev" type="button" aria-label="上一張">‹</button>
+  <button class="lb-next" type="button" aria-label="下一張">›</button>
+  <figure class="lb-figure">
+    <img class="lb-image" alt="" />
+    <figcaption class="lb-caption"></figcaption>
+  </figure>
+  <div class="lb-counter"><span class="lb-current">1</span> / <span class="lb-total">1</span></div>
+</div>
+
 <!-- Sticky WhatsApp float button -->
 <a href="https://wa.me/85292230077" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp 即時報價" id="waFloat">
   <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">

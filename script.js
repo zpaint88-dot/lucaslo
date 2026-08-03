@@ -113,8 +113,8 @@ if (hero && !isCoarsePointer_early() && !prefersReducedMotion_early()) {
 function isCoarsePointer_early(){return window.matchMedia('(pointer:coarse)').matches}
 function prefersReducedMotion_early(){return window.matchMedia('(prefers-reduced-motion:reduce)').matches}
 
-// 3D tilt on service cards
-const tiltCards = document.querySelectorAll('.service-card');
+// 3D tilt on service cards + price cards
+const tiltCards = document.querySelectorAll('.service-card, .price-card');
 const isCoarsePointer = window.matchMedia('(pointer:coarse)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 if (!isCoarsePointer && !prefersReducedMotion) {
@@ -139,7 +139,7 @@ if (!isCoarsePointer && !prefersReducedMotion) {
       rafId = requestAnimationFrame(() => {
         card.style.setProperty('--rx', rotateX.toFixed(2) + 'deg');
         card.style.setProperty('--ry', rotateY.toFixed(2) + 'deg');
-        card.style.setProperty('--ty', '-6px');
+        card.style.setProperty('--ty', card.classList.contains('price-card') ? '-8px' : '-6px');
         card.style.setProperty('--mx', mxPct + '%');
         card.style.setProperty('--my', myPct + '%');
       });
@@ -185,3 +185,73 @@ function sendToWhatsApp(e) {
   window.open(`https://wa.me/85292230077?text=${msg}`, "_blank", "noopener");
   return false;
 }
+
+// ============ LIGHTBOX ============
+(function(){
+  const lb = document.getElementById('lightbox');
+  if(!lb) return;
+  // Only items WITHOUT inner <a> (skip Land Rover / IG link tiles)
+  const items = [...document.querySelectorAll('.showcase-item')].filter(el => !el.querySelector(':scope > a'));
+  if(!items.length) return;
+
+  const img = lb.querySelector('.lb-image');
+  const cap = lb.querySelector('.lb-caption');
+  const cur = lb.querySelector('.lb-current');
+  const tot = lb.querySelector('.lb-total');
+  const btnClose = lb.querySelector('.lb-close');
+  const btnPrev = lb.querySelector('.lb-prev');
+  const btnNext = lb.querySelector('.lb-next');
+  tot.textContent = items.length;
+
+  let idx = 0;
+  const show = (i) => {
+    idx = (i + items.length) % items.length;
+    const item = items[idx];
+    const srcImg = item.querySelector('img');
+    const h4 = item.querySelector('h4');
+    const tag = item.querySelector('.showcase-tag');
+    img.src = srcImg.src;
+    img.alt = srcImg.alt || '';
+    const parts = [];
+    if(tag) parts.push(tag.textContent.trim());
+    if(h4) parts.push(h4.textContent.trim());
+    cap.textContent = parts.join(' · ');
+    cur.textContent = idx + 1;
+  };
+  const open = (i) => {
+    show(i);
+    lb.hidden = false;
+    document.body.classList.add('lb-open');
+    requestAnimationFrame(() => lb.classList.add('open'));
+  };
+  const close = () => {
+    lb.classList.remove('open');
+    document.body.classList.remove('lb-open');
+    setTimeout(() => { lb.hidden = true; }, 280);
+  };
+
+  items.forEach((el, i) => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      open(i);
+    });
+    el.setAttribute('role', 'button');
+    el.setAttribute('tabindex', '0');
+    el.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(i); }
+    });
+  });
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', (e) => { e.stopPropagation(); show(idx - 1); });
+  btnNext.addEventListener('click', (e) => { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener('click', (e) => {
+    if(e.target === lb) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if(lb.hidden) return;
+    if(e.key === 'Escape') close();
+    else if(e.key === 'ArrowLeft') show(idx - 1);
+    else if(e.key === 'ArrowRight') show(idx + 1);
+  });
+})();

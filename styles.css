@@ -700,6 +700,104 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
   .trust-quote p{-webkit-line-clamp:1}
 }
 
+/* ======= LIGHTBOX ======= */
+.lightbox{
+  position:fixed;inset:0;
+  z-index:1000;
+  background:rgba(0,0,0,.94);
+  display:flex;align-items:center;justify-content:center;
+  padding:32px 64px;
+  opacity:0;
+  transition:opacity .28s cubic-bezier(.2,.7,.2,1);
+  cursor:zoom-out;
+}
+.lightbox[hidden]{display:none !important}
+.lightbox.open{opacity:1}
+.lightbox.open .lb-figure{transform:scale(1);opacity:1}
+
+.lb-figure{
+  margin:0;
+  max-width:min(1200px,90vw);
+  max-height:82vh;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  align-items:center;
+  cursor:auto;
+  transform:scale(.94);
+  opacity:0;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .28s ease;
+}
+.lb-image{
+  max-width:100%;
+  max-height:calc(82vh - 40px);
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.lb-caption{
+  color:var(--text);
+  font-size:14px;
+  letter-spacing:.03em;
+  text-align:center;
+  min-height:20px;
+}
+
+.lb-close,.lb-prev,.lb-next{
+  position:absolute;
+  background:rgba(20,20,20,.7);
+  border:1px solid var(--line);
+  color:var(--text);
+  width:48px;height:48px;
+  border-radius:50%;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+  backdrop-filter:blur(8px);
+  z-index:2;
+}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{
+  background:var(--accent);
+  color:#0a0a0a;
+  border-color:var(--accent);
+}
+.lb-close{top:24px;right:24px;font-size:20px}
+.lb-prev{left:24px;top:50%;transform:translateY(-50%);font-size:28px;padding-bottom:3px}
+.lb-next{right:24px;top:50%;transform:translateY(-50%);font-size:28px;padding-bottom:3px}
+.lb-prev:hover{transform:translateY(-50%) scale(1.08)}
+.lb-next:hover{transform:translateY(-50%) scale(1.08)}
+
+.lb-counter{
+  position:absolute;
+  bottom:24px;left:50%;
+  transform:translateX(-50%);
+  color:var(--text-dim);
+  font-family:var(--font-en);
+  font-size:13px;
+  letter-spacing:.1em;
+  background:rgba(20,20,20,.6);
+  padding:6px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  backdrop-filter:blur(6px);
+}
+.lb-current{color:var(--accent)}
+
+/* Make plain showcase items clickable */
+.showcase-item:not(:has(> a)){cursor:zoom-in}
+
+body.lb-open{overflow:hidden}
+
+@media (max-width:720px){
+  .lightbox{padding:16px}
+  .lb-close{top:12px;right:12px;width:40px;height:40px}
+  .lb-prev{left:8px;width:40px;height:40px}
+  .lb-next{right:8px;width:40px;height:40px}
+  .lb-counter{bottom:12px}
+}
+
 /* ======= FOCUS ======= */
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 
@@ -999,6 +1097,7 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
   grid-template-columns:repeat(3,1fr);
   gap:24px;
   margin-top:48px;
+  perspective:1000px;
 }
 .price-card{
   position:relative;
@@ -1009,6 +1108,36 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
   display:flex;
   flex-direction:column;
   gap:16px;
+  --rx:0deg;--ry:0deg;--ty:0px;--mx:50%;--my:50%;
+  transform:rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .3s ease;
+  overflow:hidden;
+}
+.price-card.tilting{transition:transform .12s ease-out}
+.price-card:hover{border-color:var(--line-strong);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.price-card-featured:hover{box-shadow:0 20px 60px rgba(244,208,63,.18)}
+.price-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(220px circle at var(--mx) var(--my),rgba(244,208,63,.1),transparent 60%);
+  opacity:0;
+  transition:opacity .3s ease;
+  pointer-events:none;
+  border-radius:inherit;
+}
+.price-card:hover::before{opacity:1}
+.price-card > *{position:relative;z-index:1}
+.price-card h3{transform:translateZ(20px)}
+.price-amount{transform:translateZ(30px)}
+.price-badge{transform:translateZ(18px)}
+.price-desc{transform:translateZ(8px)}
+
+@media (prefers-reduced-motion:reduce){
+  .price-card{transform:none !important;transition:border-color .2s ease}
+  .price-card::before{display:none}
+  .price-card h3,.price-amount,.price-badge,.price-desc{transform:none !important}
 }
 .price-card-featured{
   background:linear-gradient(180deg,#151515 0%, #0d0d0d 100%);
