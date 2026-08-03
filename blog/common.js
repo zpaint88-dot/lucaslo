@@ -72,6 +72,14 @@
     sections.forEach(s=>spy.observe(s));
   }
 
+  const backTop=document.querySelector('.back-to-top');
+  if(backTop){
+    const onScroll=()=>backTop.classList.toggle('is-visible',window.scrollY>500);
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+    backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  }
+
   const waFloat=document.querySelector('.wa-float'),footerEl=document.querySelector('.footer');
   if(waFloat&&footerEl){
     const footerObserver=new IntersectionObserver(entries=>{

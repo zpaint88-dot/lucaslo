@@ -255,3 +255,12 @@ function sendToWhatsApp(e) {
     else if(e.key === 'ArrowRight') show(idx + 1);
   });
 })();
+
+(function(){
+  const backTop = document.querySelector('.back-to-top');
+  if(!backTop) return;
+  const onScroll = () => backTop.classList.toggle('is-visible', window.scrollY > 500);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+})();
