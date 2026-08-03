@@ -804,8 +804,8 @@ body.lb-open{overflow:hidden}
 /* ======= SHOWCASE (merged: cases + works + gallery) ======= */
 .showcase-featured{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:32px;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
   margin-top:48px;
 }
 .showcase-featured .case-card{position:relative}
@@ -892,10 +892,15 @@ body.lb-open{overflow:hidden}
   flex-wrap:wrap;
 }
 
+@media (max-width:1100px) and (min-width:721px){
+  .showcase-featured{grid-template-columns:repeat(2,1fr);gap:24px}
+}
 @media (max-width:900px){
-  .showcase-featured{grid-template-columns:1fr;gap:24px}
   .showcase-gallery{grid-template-columns:repeat(2,1fr);gap:12px}
   .showcase-featured .case-body h3{font-size:19px}
+}
+@media (max-width:720px){
+  .showcase-featured{grid-template-columns:1fr;gap:24px}
 }
 @media (max-width:520px){
   .showcase-gallery{grid-template-columns:1fr}
