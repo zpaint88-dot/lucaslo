@@ -1583,9 +1583,13 @@ body:has(.nav.closing) .wa-float{
 .service-brands--logos img[alt="NICE VINYL"]{height:16px}
 .service-brands--logos img[alt="3M"]{height:20px}
 .service-brands--logos img[alt="XPEL"]{height:14px}
+.service-brands--logos img[alt="TECKWRAP"]{height:26px}
+.service-brands--logos img[alt="AX Film"]{height:15px}
 @media (max-width:520px){
   .service-brands--logos{gap:16px}
   .service-brands--logos img[alt="NICE VINYL"]{height:13px}
   .service-brands--logos img[alt="3M"]{height:17px}
   .service-brands--logos img[alt="XPEL"]{height:12px}
+  .service-brands--logos img[alt="TECKWRAP"]{height:22px}
+  .service-brands--logos img[alt="AX Film"]{height:13px}
 }
