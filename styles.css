@@ -267,6 +267,8 @@ a.nav-info-value.nav-info-link:hover{color:var(--accent)}
   position:relative;overflow:hidden;
   padding:clamp(64px,10vw,120px) var(--pad) clamp(56px,8vw,96px);
   min-height:78vh;display:flex;align-items:center;
+  --px:0;
+  --py:0;
 }
 .hero-bg{
   position:absolute;inset:0;z-index:0;pointer-events:none;
@@ -274,14 +276,37 @@ a.nav-info-value.nav-info-link:hover{color:var(--accent)}
     radial-gradient(1200px 500px at 15% -10%, rgba(244,208,63,.16), transparent 60%),
     radial-gradient(900px 500px at 90% 20%, rgba(59,130,246,.10), transparent 60%),
     linear-gradient(180deg,#0a0a0a 0%, #050505 100%);
+  transform:translate3d(calc(var(--px) * 12px), calc(var(--py) * 12px), 0);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+}
+/* Floating accent orb — highest parallax depth (farthest, so moves LEAST inverted) */
+.hero-bg::before{
+  content:"";position:absolute;
+  top:15%;right:10%;
+  width:420px;height:420px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(244,208,63,.22), rgba(244,208,63,.06) 40%, transparent 70%);
+  filter:blur(8px);
+  transform:translate3d(calc(var(--px) * 40px), calc(var(--py) * 30px), 0);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
 }
 .hero-bg::after{
-  content:"";position:absolute;inset:0;
+  content:"";position:absolute;inset:-40px;
   background-image:
     linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
+  /* Grid moves opposite direction to gradient for depth separation */
+  transform:translate3d(calc(var(--px) * -20px), calc(var(--py) * -20px), 0);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1);
+  will-change:transform;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-bg,.hero-bg::before,.hero-bg::after{transform:none !important;transition:none !important}
 }
 .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;width:100%}
 

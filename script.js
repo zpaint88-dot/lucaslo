@@ -75,6 +75,44 @@ document.querySelectorAll(
   group.classList.add("reveal-group");
 });
 
+// Hero parallax — mouse tracking + subtle scroll fade
+const hero = document.querySelector('.hero');
+if (hero && !isCoarsePointer_early() && !prefersReducedMotion_early()) {
+  let rafId = null;
+  let targetPx = 0, targetPy = 0;
+  let curPx = 0, curPy = 0;
+
+  const animate = () => {
+    // Smooth easing toward target (lerp)
+    curPx += (targetPx - curPx) * 0.08;
+    curPy += (targetPy - curPy) * 0.08;
+    hero.style.setProperty('--px', curPx.toFixed(3));
+    hero.style.setProperty('--py', curPy.toFixed(3));
+    if (Math.abs(targetPx - curPx) > 0.001 || Math.abs(targetPy - curPy) > 0.001) {
+      rafId = requestAnimationFrame(animate);
+    } else {
+      rafId = null;
+    }
+  };
+
+  const onMove = (e) => {
+    const rect = hero.getBoundingClientRect();
+    targetPx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;   // -1..1
+    targetPy = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    if (!rafId) rafId = requestAnimationFrame(animate);
+  };
+
+  const onLeave = () => {
+    targetPx = 0; targetPy = 0;
+    if (!rafId) rafId = requestAnimationFrame(animate);
+  };
+
+  hero.addEventListener('pointermove', onMove);
+  hero.addEventListener('pointerleave', onLeave);
+}
+function isCoarsePointer_early(){return window.matchMedia('(pointer:coarse)').matches}
+function prefersReducedMotion_early(){return window.matchMedia('(prefers-reduced-motion:reduce)').matches}
+
 // 3D tilt on service cards
 const tiltCards = document.querySelectorAll('.service-card');
 const isCoarsePointer = window.matchMedia('(pointer:coarse)').matches;
