@@ -55,6 +55,23 @@
     slider.addEventListener('click',e=>{if(!dragging){setSplit((e.touches?e.touches[0]:e).clientX);}});
   });
 
+  const tocLinks=document.querySelectorAll('.toc a[href^="#"]');
+  if(tocLinks.length){
+    const idToLink=new Map();
+    const sections=[];
+    tocLinks.forEach(a=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){idToLink.set(id,a);sections.push(el);}});
+    const spy=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          tocLinks.forEach(l=>l.classList.remove('is-active'));
+          const link=idToLink.get(entry.target.id);
+          if(link)link.classList.add('is-active');
+        }
+      });
+    },{rootMargin:'-100px 0px -70% 0px',threshold:0});
+    sections.forEach(s=>spy.observe(s));
+  }
+
   const waFloat=document.querySelector('.wa-float'),footerEl=document.querySelector('.footer');
   if(waFloat&&footerEl){
     const footerObserver=new IntersectionObserver(entries=>{
