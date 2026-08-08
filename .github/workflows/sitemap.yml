@@ -1,0 +1,41 @@
+name: 自動更新 sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'tools/generate-sitemap.js'
+      - '.github/workflows/sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取得原始碼
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 重新產生 sitemap.xml
+        run: node tools/generate-sitemap.js
+
+      - name: 有變化就提交
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "sitemap.xml 無變化，唔使提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "自動更新 sitemap.xml"
+          git push
