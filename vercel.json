@@ -3,6 +3,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.zpaintcar.com" }],
+      "destination": "https://zpaintcar.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/blog/:slug.html",
       "destination": "/blog/:slug",
       "permanent": true
