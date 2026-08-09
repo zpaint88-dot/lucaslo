@@ -1094,6 +1094,23 @@ body.lb-open{overflow:hidden}
   font-size:18px;
   letter-spacing:2px;
 }
+.rating-summary{
+  display:inline-flex;align-items:center;gap:18px;text-align:left;
+  margin:24px auto 0;padding:16px 24px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03);
+}
+.rating-score{
+  font-family:var(--font-en);font-size:40px;line-height:1;font-weight:700;color:var(--accent);
+}
+.rating-detail .rating-stars{color:var(--accent);font-size:15px;letter-spacing:2px;display:block}
+.rating-detail p{margin:4px 0 0;font-size:13px;line-height:1.6;color:#b0b0b0}
+.rating-detail strong{color:var(--text);font-weight:600}
+.rating-detail a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+.rating-detail a:hover{border-bottom-color:currentColor}
+@media (max-width:520px){
+  .rating-summary{display:flex;gap:14px;padding:14px 16px}
+  .rating-score{font-size:32px}
+}
 .review-card blockquote{
   margin:0;
   color:var(--text);
