@@ -1663,3 +1663,19 @@ body:has(.nav.closing) .wa-float{
   .service-brands--logos img[alt="TECKWRAP"]{height:22px}
   .service-brands--logos img[alt="AX Film"]{height:13px}
 }
+
+/* --- 4.8 星評分改為可點擊入 Facebook 評價 --- */
+.hero-meta-link{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:opacity .2s ease}
+.hero-meta-link:hover strong,.hero-meta-link:focus-visible strong{color:var(--accent)}
+.hero-meta-link:hover span,.hero-meta-link:focus-visible span{color:#d8d8d8}
+a.trust-rating{text-decoration:none;color:inherit;transition:transform .2s ease}
+a.trust-rating:hover,a.trust-rating:focus-visible{transform:translateY(-1px)}
+a.trust-rating:hover .trust-label span,a.trust-rating:focus-visible .trust-label span{color:var(--accent)}
+a.rating-summary{text-decoration:none;color:inherit;transition:border-color .2s ease,background .2s ease}
+a.rating-summary:hover,a.rating-summary:focus-visible{border-color:rgba(244,208,63,.45);background:rgba(244,208,63,.06)}
+.rating-link{color:var(--accent);border-bottom:1px solid transparent}
+a.rating-summary:hover .rating-link,a.rating-summary:focus-visible .rating-link{border-bottom-color:currentColor}
+.hero-meta-link:focus-visible,a.trust-rating:focus-visible,a.rating-summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media (max-width:640px){
+  .hero-meta-link span{font-size:11.5px;white-space:nowrap;letter-spacing:0}
+}
