@@ -56,7 +56,7 @@ const io = new IntersectionObserver((entries) => {
 
 // Individual reveal targets (section headings, standalone blocks)
 document.querySelectorAll(
-  ".section-head, .about-grid > *, .cases-cta, .reviews-cta, .contact-info, .contact-form-wrap"
+  ".section-head, .about-grid > *, .cases-cta, .reviews-cta, .contact-info, .contact-form-wrap, .reveal"
 ).forEach(el => {
   el.classList.add("reveal"); io.observe(el);
 });

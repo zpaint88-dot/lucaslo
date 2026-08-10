@@ -712,10 +712,18 @@ h3{font-size:20px;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
 }
 .trust-rating{display:flex;flex-direction:column;gap:4px;flex-shrink:0}
 .trust-stars{
-  color:var(--accent);
+  display:inline-block;
+  position:relative;
+  color:rgba(255,255,255,.22);
   font-size:18px;
   letter-spacing:2px;
   line-height:1;
+}
+.trust-stars>span{display:block}
+.trust-stars::before{
+  content:"\2605\2605\2605\2605\2605";
+  position:absolute;inset:0;overflow:hidden;white-space:nowrap;
+  width:var(--fill,100%);color:var(--accent);
 }
 .trust-label{
   margin:0;
@@ -1102,7 +1110,16 @@ body.lb-open{overflow:hidden}
 .rating-score{
   font-family:var(--font-en);font-size:40px;line-height:1;font-weight:700;color:var(--accent);
 }
-.rating-detail .rating-stars{color:var(--accent);font-size:15px;letter-spacing:2px;display:block}
+.rating-detail .rating-stars{
+  display:inline-block;position:relative;font-size:15px;letter-spacing:2px;
+  color:rgba(255,255,255,.22);
+}
+.rating-detail .rating-stars>span{display:block}
+.rating-detail .rating-stars::before{
+  content:"\2605\2605\2605\2605\2605";
+  position:absolute;inset:0;overflow:hidden;white-space:nowrap;
+  width:var(--fill,100%);color:var(--accent);
+}
 .rating-detail p{margin:4px 0 0;font-size:13px;line-height:1.6;color:#b0b0b0}
 .rating-detail strong{color:var(--text);font-weight:600}
 .rating-detail a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
