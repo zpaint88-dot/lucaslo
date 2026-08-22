@@ -9,6 +9,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KD62C27L');</script>
 <!-- End Google Tag Manager -->
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7BCXDTXHR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P7BCXDTXHR');
+
+  // ZPAINT — WhatsApp click tracking
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href*="wa.me"]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var phone = (href.match(/wa\.me\/(\d+)/) || [])[1] || '';
+      gtag('event', 'whatsapp_click', {
+        link_url: href,
+        link_text: (a.innerText || '').trim().slice(0, 100),
+        whatsapp_number: phone,
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      });
+    }, true);
+  });
+</script>
+<!-- End Google tag -->
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>平治 S-Class 老爺車換裝 Maybach 格｜雙色PPF加Coachline撞色線點做｜ZPAINT</title>
