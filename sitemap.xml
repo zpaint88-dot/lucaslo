@@ -19,12 +19,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zpaintcar.com/blog/coating-vs-pet-ppf</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://zpaintcar.com/blog/tesla-warranty-accident</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
@@ -140,6 +134,12 @@
   </url>
   <url>
     <loc>https://zpaintcar.com/blog/color-matching-technique</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zpaintcar.com/blog/coating-vs-pet-ppf</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
