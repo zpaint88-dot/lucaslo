@@ -1,4 +1,70 @@
+# ZPAINT 易錫汽車噴漆 — robots.txt
+# https://zpaintcar.com
+
+# Default: allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /tools/
+Disallow: /assets/private/
 
+# --- AI search & LLM crawlers (explicitly allowed) ---
+
+# OpenAI (ChatGPT search + training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google (AI Overviews / Gemini training opt-in)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft / Bing
+User-agent: bingbot
+Allow: /
+
+# Meta
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (feeds many LLM training sets)
+User-agent: CCBot
+Allow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Allow: /
+
+# --- Sitemap ---
 Sitemap: https://zpaintcar.com/sitemap.xml
