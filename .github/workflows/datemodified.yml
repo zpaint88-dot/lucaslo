@@ -24,13 +24,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # 用 PAT 或者 default token — 因為要 commit push 返
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 更新 JSON-LD dateModified
         run: node tools/update-datemodified.js
 
-      - name: 有變化就提交
+      - name: 有變化就提交（帶重試對抗 race condition）
         run: |
           if git diff --quiet -- '*.html' 'blog/*.html'; then
             echo "無 dateModified 變化，唔使提交"
@@ -38,8 +37,18 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 只 add 有改動嘅 HTML
           git add '*.html' 'blog/*.html' || true
-          # [skip ci] 防止 workflow 自己 push 觸發循環（sitemap.yml 亦不會被 trigger 因為 sitemap.xml 未改）
+          # [skip ci] 防止 workflow 自己 push 觸發循環
           git commit -m "自動更新 dateModified（跟隨 git commit 日期）[skip ci]"
-          git push
+          # 重試最多 5 次應對 race condition
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "第 $i 次推送成功"
+              exit 0
+            fi
+            echo "第 $i 次推送失敗，pull rebase 後重試..."
+            git pull --rebase --autostash
+            sleep $((RANDOM % 3 + 1))
+          done
+          echo "推送失敗超過 5 次"
+          exit 1
