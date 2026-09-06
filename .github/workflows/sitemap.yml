@@ -28,7 +28,7 @@ jobs:
       - name: 重新產生 sitemap.xml
         run: node tools/generate-sitemap.js
 
-      - name: 有變化就提交
+      - name: 有變化就提交（帶重試對抗 race condition）
         run: |
           if git diff --quiet -- sitemap.xml; then
             echo "sitemap.xml 無變化，唔使提交"
@@ -37,5 +37,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add sitemap.xml
-          git commit -m "自動更新 sitemap.xml"
-          git push
+          git commit -m "自動更新 sitemap.xml [skip ci]"
+          # 重試最多 5 次應對 race condition（同其他 workflow 同時 push）
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "第 $i 次推送成功"
+              exit 0
+            fi
+            echo "第 $i 次推送失敗，pull rebase 後重試..."
+            git pull --rebase --autostash
+            sleep $((RANDOM % 3 + 1))
+          done
+          echo "推送失敗超過 5 次"
+          exit 1
