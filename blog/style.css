@@ -1,7 +1,7 @@
 :root,[data-theme="light"]{
   --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.45rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.2rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.6rem);--text-hero:clamp(2.4rem,.8rem + 4.5vw,4.2rem);
   --space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
-  --bg:#f7f4ee;--surface:#fbf9f5;--surface-2:#ffffff;--surface-warm:#efe7d8;--border:#ddd2bd;--divider:#e9e0cd;--text:#1c1712;--text-muted:#5d5346;--text-faint:#9a8c76;--text-inverse:#fffdf8;
+  --bg:#f7f4ee;--surface:#fbf9f5;--surface-2:#ffffff;--surface-warm:#efe7d8;--border:#ddd2bd;--divider:#e9e0cd;--text:#1c1712;--text-muted:#5d5346;--text-faint:#7a6c56;--text-inverse:#fffdf8;
   --primary:#9c6a13;--primary-hover:#7d5410;--primary-soft:#eee0bd;--dark:#0d0b09;--dark-soft:#171310;--success:#25D366;
   --radius-sm:.375rem;--radius-md:.65rem;--radius-lg:1rem;--radius-xl:1.4rem;--radius-full:9999px;
   --shadow-sm:0 4px 18px rgba(17,13,8,.07);--shadow-md:0 16px 40px rgba(17,13,8,.12);--shadow-lg:0 30px 76px rgba(17,13,8,.2);
