@@ -81,10 +81,28 @@
   }
 
   const waFloat=document.querySelector('.wa-float'),footerEl=document.querySelector('.footer');
-  if(waFloat&&footerEl){
-    const footerObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>waFloat.classList.toggle('is-hidden',entry.isIntersecting));
-    },{rootMargin:'0px 0px -40px 0px'});
-    footerObserver.observe(footerEl);
+  if(waFloat){
+    // Show sticky button after 300ms so it doesn't compete with initial hero paint
+    setTimeout(()=>waFloat.classList.add('visible'),300);
+    // Fire GA4 event with cta_location so we can distinguish sticky vs inline clicks
+    waFloat.addEventListener('click',function(){
+      if(typeof gtag==='function'){
+        gtag('event','whatsapp_click',{
+          link_url:waFloat.getAttribute('href')||'',
+          link_text:'Sticky WA Float',
+          whatsapp_number:'85292230077',
+          cta_location:'sticky_float',
+          page_location:window.location.href,
+          page_path:window.location.pathname
+        });
+      }
+    });
+    // Hide when footer enters view (avoid overlapping footer content)
+    if(footerEl){
+      const footerObserver=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>waFloat.classList.toggle('visible',!entry.isIntersecting));
+      },{rootMargin:'0px 0px -40px 0px'});
+      footerObserver.observe(footerEl);
+    }
   }
 })();

@@ -45,6 +45,19 @@ if (waFloat) {
   };
   toggleWa();
   window.addEventListener("scroll", toggleWa, { passive: true });
+  // Fire GA4 event with cta_location so we can distinguish sticky vs inline clicks
+  waFloat.addEventListener("click", function () {
+    if (typeof gtag === "function") {
+      gtag("event", "whatsapp_click", {
+        link_url: waFloat.getAttribute("href") || "",
+        link_text: "Sticky WA Float",
+        whatsapp_number: "85292230077",
+        cta_location: "sticky_float",
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      });
+    }
+  });
 }
 
 // Reveal on scroll — refined blur + scale + stagger
