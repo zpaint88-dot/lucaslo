@@ -3,8 +3,18 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/fake-ppf-brands",
+      "destination": "/blog/choose-good-ppf-avoid-residue",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.zpaintcar.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.zpaintcar.com"
+        }
+      ],
       "destination": "https://zpaintcar.com/$1",
       "permanent": true
     },
@@ -23,8 +33,14 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]
