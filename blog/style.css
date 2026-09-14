@@ -275,3 +275,19 @@ ul[role="list"]{list-style:none}
   .compare-slider .compare-label{font-size:.65rem;padding:.25rem .55rem}
   .compare-slider .compare-handle{width:38px;height:38px}
 }
+
+/* 主題專區（按主題睇文章）— 用主題變數，light/dark 都正常 */
+.blog-topics{padding-top:var(--space-8);padding-bottom:var(--space-4)}
+.blog-topics>.container>h2{margin-bottom:var(--space-2)}
+.blog-topics .topics-intro{margin-bottom:var(--space-6);color:var(--text-muted);font-size:var(--text-sm)}
+.topic-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--space-8)}
+.topic-chips a{display:inline-block;padding:.5rem 1rem;border:1px solid var(--border);border-radius:var(--radius-full);text-decoration:none;font-size:var(--text-sm);background:var(--surface);color:var(--text);transition:background var(--transition),border-color var(--transition),color var(--transition)}
+.topic-chips a:hover{background:var(--primary-soft);border-color:var(--primary);color:var(--primary-hover)}
+.topic-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-6)}
+.topic-group{padding:var(--space-5);border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface)}
+.topic-group h3{margin:0 0 .75rem;font-size:var(--text-lg)}
+.topic-group ul{list-style:none;padding:0;margin:0}
+.topic-group li{padding:.4rem 0;border-bottom:1px solid var(--divider)}
+.topic-group li:last-child{border-bottom:0}
+.topic-group li a{text-decoration:none;color:var(--text);font-size:var(--text-sm);line-height:1.5;transition:color var(--transition)}
+.topic-group li a:hover{color:var(--primary-hover);text-decoration:underline}
