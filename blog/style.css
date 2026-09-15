@@ -291,3 +291,12 @@ ul[role="list"]{list-style:none}
 .topic-group li:last-child{border-bottom:0}
 .topic-group li a{text-decoration:none;color:var(--text);font-size:var(--text-sm);line-height:1.5;transition:color var(--transition)}
 .topic-group li a:hover{color:var(--primary-hover);text-decoration:underline}
+
+/* CTA band 同文章內按鈕：.article-body a 嘅金色會蓋過 .btn 嘅文字色，
+   而 .cta-band 永遠係深色底，所以標題唔可以用會反轉嘅 --text-inverse。 */
+.cta-band h2,.cta-band h3{color:#f3ead9}
+.cta-band p{color:#cdbfa4}
+.article-body a.btn{text-decoration:none;font-weight:600}
+.article-body a.btn-whatsapp,.cta-band a.btn-whatsapp{color:#062010}
+.article-body a.btn-primary,.cta-band a.btn-primary{color:#161208}
+.article-body a.btn-secondary,.cta-band a.btn-secondary{color:#f3ead9;border-color:rgba(243,234,217,.28)}
