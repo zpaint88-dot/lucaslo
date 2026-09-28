@@ -8,9 +8,21 @@
   </url>
   <url>
     <loc>https://zpaintcar.com/blog</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zpaintcar.com/blog/volvo-ex30-front-fender-dent-repair-respray</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zpaintcar.com/blog/tesla-model-y-matte-grey-wrap</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zpaintcar.com/blog/ppf-vs-coating-vs-wrap</loc>
@@ -25,8 +37,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zpaintcar.com/blog/volvo-ex30-front-fender-dent-repair-respray</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://zpaintcar.com/blog/byd-seal-dent-repair-respray</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,12 +80,6 @@
   </url>
   <url>
     <loc>https://zpaintcar.com/blog/tesla-model3-scratch-wrap-repair</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zpaintcar.com/blog/tesla-model-y-matte-grey-wrap</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -181,12 +187,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zpaintcar.com/blog/byd-seal-dent-repair-respray</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://zpaintcar.com/blog/bmw-428i-convertible-polish-wax</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -199,31 +199,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zpaintcar.com/spray-paint-price-hk</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zpaintcar.com/scratch-repair-price-hk</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://zpaintcar.com/ppf-price-hk</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://zpaintcar.com/spray-paint-price-hk</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://zpaintcar.com/scratch-repair-price-hk</loc>
-    <lastmod>2026-09-17</lastmod>
+    <loc>https://zpaintcar.com/car-wrap-price-hk</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zpaintcar.com/motorcycle-wrap-price-hk</loc>
-    <lastmod>2026-09-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://zpaintcar.com/car-wrap-price-hk</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
