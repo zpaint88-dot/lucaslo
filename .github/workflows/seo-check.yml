@@ -1,0 +1,27 @@
+name: SEO URL and content checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+      - 'vercel.json'
+      - 'tools/check-seo.js'
+      - '.github/workflows/seo-check.yml'
+  pull_request:
+    paths:
+      - '**.html'
+      - 'tools/check-seo.js'
+      - 'vercel.json'
+      - '.github/workflows/seo-check.yml'
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/check-seo.js

@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/blog/index.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
       "source": "/blog/fake-ppf-brands",
       "destination": "/blog/choose-good-ppf-avoid-residue",
       "permanent": true
