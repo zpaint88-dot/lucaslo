@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KD62C27L');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7BCXDTXHR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-P7BCXDTXHR');
+
+  // ZPAINT — WhatsApp click tracking
+  document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+      var a = e.target.closest('a[href*="wa.me"]');
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      var phone = (href.match(/wa\.me\/(\d+)/) || [])[1] || '';
+      gtag('event', 'whatsapp_click', {
+        link_url: href,
+        link_text: (a.innerText || '').trim().slice(0, 100),
+        whatsapp_number: phone,
+        page_location: window.location.href,
+        page_path: window.location.pathname
+      });
+    }, true);
+  });
+</script>
+<!-- End Google tag -->
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>電車車身維修會唔會影響電池保養？｜ZPAINT</title>
+<meta name="description" content="電動車撞花、凹痕交第三方車房鈑金噴漆，一般唔會令電池保養失效。拆解 BYD、Tesla 條款，同埋焗漆溫度、底盤損傷 3 個要留意位。" />
+<meta property="og:title" content="電車車身維修會唔會影響電池保養？" />
+<meta property="og:description" content="外觀鈑金噴漆一般唔影響電池保養；真正要小心係電池底盤損傷、拆高壓系統同焗漆溫度。" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://zpaintcar.com/images/real/byd-seal-dent-repair-respray/04-byd-seal-charging-port-fender-after.jpg" />
+<!-- og-meta:v1 start -->
+<meta property="og:url" content="https://zpaintcar.com/blog/ev-body-repair-battery-warranty" />
+<meta property="og:site_name" content="ZPAINT 易錫汽車噴漆" />
+<meta property="og:locale" content="zh_HK" />
+<meta property="og:image:alt" content="電車車身維修會唔會影響電池保養？ — ZPAINT 深水埗汽車噴漆" />
+<meta property="article:published_time" content="2026-10-31T04:00:00Z" />
+<meta property="article:modified_time" content="2026-10-31T04:00:00Z" />
+<meta property="article:author" content="ZPAINT 易錫汽車噴漆" />
+<meta property="article:section" content="知識指南" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="電車車身維修會唔會影響電池保養？" />
+<meta name="twitter:description" content="外觀鈑金噴漆一般唔影響電池保養；真正要小心係電池底盤損傷、拆高壓系統同焗漆溫度。" />
+<meta name="twitter:image" content="https://zpaintcar.com/images/real/byd-seal-dent-repair-respray/04-byd-seal-charging-port-fender-after.jpg" />
+<!-- og-meta:v1 end -->
+<link rel="canonical" href="https://zpaintcar.com/blog/ev-body-repair-battery-warranty" />
+<link rel="icon" type="image/png" href="https://zpaintcar.com/assets/favicon.png" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "電車車身維修會唔會影響電池保養？",
+  "description": "電動車撞花、凹痕交第三方車房鈑金噴漆，一般唔會令電池保養失效。拆解 BYD、Tesla 條款，同埋焗漆溫度、底盤損傷 3 個要留意位。",
+  "image": [
+    "https://zpaintcar.com/images/real/byd-seal-dent-repair-respray/04-byd-seal-charging-port-fender-after.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Lucas Lo",
+    "jobTitle": "ZPAINT 易錫汽車噴漆創辦人",
+    "url": "https://zpaintcar.com/",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ZPAINT 易錫汽車噴漆",
+      "url": "https://zpaintcar.com/"
+    },
+    "sameAs": [
+      "https://www.instagram.com/zpaint_car/",
+      "https://www.facebook.com/profile.php?id=100070724264952"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ZPAINT 易錫汽車噴漆",
+    "url": "https://zpaintcar.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zpaintcar.com/apple-touch-icon.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "datePublished": "2026-10-31T04:00:00Z",
+  "dateModified": "2026-10-31T04:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zpaintcar.com/blog/ev-body-repair-battery-warranty"
+  },
+  "url": "https://zpaintcar.com/blog/ev-body-repair-battery-warranty",
+  "inLanguage": "zh-Hant-HK",
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://zpaintcar.com/blog",
+    "name": "ZPAINT 網誌"
+  },
+  "about": {
+    "@id": "https://zpaintcar.com/#business"
+  },
+  "articleSection": "知識指南",
+  "keywords": [
+    "電動車電池保養",
+    "電車鈑金噴漆",
+    "第三方維修保養",
+    "BYD 電池保修",
+    "Tesla 電池保養",
+    "電車焗漆溫度"
+  ],
+  "wordCount": 2228
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "電動車喺第三方車房做鈑金噴漆，電池保養會唔會即刻失效？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般唔會。以香港 BYD 為例，官方條款寫明選擇第三方服務供應商維修，不會令原廠保養（包括電芯終身保修）失效，只有第三方服務直接損壞動力電池先會影響電芯保修。Tesla 香港亦表明非保養範圍嘅維修可以去車主自選嘅維修中心。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "邊類車身維修可能影響電池保養？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "主要有三類：電池底殼或高壓線有撞擊損傷但冇交原廠檢查；非授權人員拆開或維修電池、高壓系統；焗漆時溫度或時間超出車廠限制，令電池受熱損傷。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "電車焗漆會唔會焗壞電池？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只要跟車廠限制就唔會。例如 Tesla 維修手冊列明，焗漆前車輛溫度要低於 35°C、焗漆最長 45 分鐘、期間高壓電池最高 60°C。唔同品牌限制唔同，車房應該先查清楚。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "撞到車底，係咪仲可以交 ZPAINT 處理？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "車身外觀部分可以，但如果電池底殼有花痕、凹位或者儀錶有警告，我們會建議先交原廠或授權中心檢查電池，確認冇事再做鈑金噴漆，咁保養記錄最清楚。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KD62C27L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="https://zpaintcar.com" class="brand" aria-label="易錫汽車噴漆 ZPAINT 首頁">
+      <img class="brand-logo" src="https://zpaintcar.com/images/brands/zpaint-logo.png" alt="ZPAINT — Repair and car detailing" width="781" height="694" />
+    </a>
+    <nav class="nav" aria-label="主選單">
+      <button type="button" class="menu-toggle" data-menu-toggle aria-label="開啟選單"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="nav-links" data-menu>
+        <a href="https://zpaintcar.com/#services">服務</a>
+        <a href="https://zpaintcar.com/#pricing">價目</a>
+        <a href="https://zpaintcar.com/#cases">案例</a>
+        <a class="active" href="/blog">網誌</a>
+        <a href="https://zpaintcar.com/#contact">聯絡</a>
+      </div>
+      <div class="header-cta">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="切換深淺模式"></button>
+        <a class="btn btn-secondary" href="https://zpaintcar.com">返回主頁</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="article-header">
+    <div class="container container-narrow reveal visible">
+      <div class="breadcrumb"><a href="https://zpaintcar.com">首頁</a><span>/</span><a href="/blog">網誌</a><span>/</span><span>電車維修與電池保養</span></div>
+      <span class="eyebrow">電動車知識</span>
+      <h1>電車車身維修會唔會影響電池保養？</h1>
+      <div class="article-meta"><span>Lucas Lo</span><span>·</span><span>電動車鈑金噴漆</span><span>·</span><span>閱讀約5分鐘</span></div>
+    </div>
+    <div class="container container-narrow">
+      <div class="article-hero-img reveal visible"><img src="https://zpaintcar.com/images/real/byd-seal-dent-repair-respray/04-byd-seal-charging-port-fender-after.jpg" alt="BYD Seal 充電口車翼鈑金噴漆完工，電動車外觀維修" /></div>
+    </div>
+  </section>
+  <section class="article-body">
+    <div class="container container-narrow">
+      <p>架電車撞花咗、門邊凹咗，好多車主第一個問題唔係「幾錢」，而係：<strong>「出面車房整，會唔會冇咗電池保養？」</strong>電池係成架電車最貴嘅部件，擔心係正常嘅。答案先講：<strong>純車身鈑金、噴漆、換泵把，一般唔會令電池保養失效。</strong>真正要小心嘅，只係三種情況。</p>
+
+      <h2>先講結論：外觀維修同電池保養係兩回事</h2>
+      <p>電池保養保障嘅係電池本身嘅物料或者做工問題，例如容量衰減過快、電芯故障。門板、車翼、泵把、沙板呢啲外觀部件，同電池係分開嘅系統，喺邊間車房整，本身唔會改變電池嘅狀態。</p>
+      <p>香港有個好清楚嘅例子。<a href="https://www.compcomm.hk/tc/media/press/files/BYD_PR_TC.pdf" target="_blank" rel="noopener noreferrer">競爭事務委員會</a>早前關注到 BYD 舊版保用手冊用詞含糊，可能令車主以為所有維修都要返特約服務中心先保到電池終身保用；BYD 其後修訂條款，釐清車主可以選用非特約服務供應商做保養及維修，除非有關服務直接導致動力電池損壞，否則電池終身保用唔會失效。</p>
+      <p><a href="https://www.byd.com/en-hk/support/service/warranty-policy/customer-rights-and-obligation-notice" target="_blank" rel="noopener noreferrer">BYD 香港官網嘅車主權利及義務通知</a>亦寫明，車主選擇第三方服務供應商維修，不會令原廠質保（包括動力電池電芯終身保修）失效。Tesla 方面，<a href="https://www.tesla.com/en_HK/support/vehicle-warranty" target="_blank" rel="noopener noreferrer">Tesla 香港保養頁面</a>表示保養範圍內嘅維修要交 Tesla 服務中心，但非保養範圍嘅維修或保養，車主可以去自己揀嘅非 Tesla 維修中心；Tesla 只係唔負責第三方維修不當所引起嘅問題。</p>
+      <p>即係話，<strong>關鍵唔係「邊個整」，而係「整嘅過程有冇傷到電池」。</strong></p>
+
+      <h2>要特別小心嘅 3 個情況</h2>
+      <h3>1. 撞擊傷到電池底殼或高壓線</h3>
+      <p>電車電池通常鋪喺車底。如果係撞石壆、刮車底、大力撞車側底部，電池殼有機會受損。<a href="https://www.tesla.com/sites/default/files/pdfs/model_s_quick_guide/Model_S_New_Vehicle_Limited_Warranty_Hong_Kong_Touchscreen_6.2_R20150809_en_HK.pdf" target="_blank" rel="noopener noreferrer">Tesla 香港版新車有限保養</a>列明，碰撞或意外造成嘅損壞，以及由非 Tesla 人員維修或打開電池，都唔屬電池保養範圍。Tesla 嘅<a href="https://service.tesla.com/docs/ServiceBulletins/External/TN/TN-14-16-004_Inspect_MS_and_MX_HV_Battery_for_Underside_Damage_R8.pdf" target="_blank" rel="noopener noreferrer">技術通告</a>亦講明，如果車身舖見到電池底部有明顯損傷，應該聯絡 Tesla，唔應該自己嘗試修理電池。</p>
+      <p>要留意：呢種情況下唔保嘅原因係「撞壞咗」，而唔係「去咗第三方車房整車身」。所以撞到車底，最穩陣係先交原廠或授權中心檢查電池，再做外觀維修。</p>
+
+      <h3>2. 由非授權人員拆電池或高壓系統</h3>
+      <p>BYD 同 Tesla 嘅條款都有一個共通點：電池同高壓系統要由原廠或授權技師處理。正規車身舖做鈑金噴漆，唔需要亦唔應該打開電池包。如果維修範圍真係涉及高壓部件，正確做法係分開處理：高壓部分交原廠，外觀部分再交車身舖。</p>
+
+      <h3>3. 焗漆溫度同時間超出車廠限制</h3>
+      <p>呢點最多人忽略。噴油之後要入焗爐焗乾，但電池怕熱。車廠有清楚規定，例如 <a href="https://service.tesla.com/docs/BodyRepair/Body_Repair_Procedures/Model_Y/HTML/en-us/GUID-129E9E04-976F-4E8A-B053-4925919B3AE2.html" target="_blank" rel="noopener noreferrer">Tesla 車身維修手冊</a>列明，裝住高壓電池焗漆時：</p>
+      <ul>
+        <li>焗漆前車輛溫度要低於 <strong>35°C</strong></li>
+        <li>焗漆時間最長 <strong>45 分鐘</strong></li>
+        <li>焗漆期間高壓電池最高 <strong>60°C</strong></li>
+        <li>如果唔確定電池溫度，車要喺 35°C 以下環境放最少 12 個鐘先可以焗</li>
+      </ul>
+      <p>Tesla 嘅<a href="https://service.tesla.com/docs/BodyRepair/Body_Repair_Procedures/Model_3/HTML/en-us/GUID-FC2D3FF5-0A86-4CB5-A06E-2C6A1E44F278.html" target="_blank" rel="noopener noreferrer">結構膠加熱指引</a>亦提醒，喺電池附近加熱固化黏膠時，唔可以令電池超過 74°C。其他品牌標準唔同：<a href="https://www.repairerdrivennews.com/2021/06/17/ford-specially-trained-technician-gear-needed-to-remove-high-voltage-battery/" target="_blank" rel="noopener noreferrer">Ford</a>要求焗爐設定 60°C 或以下、45 分鐘內；<a href="https://techinfo.honda.com/rjanisis/pubs/web/docs/BBN25675.pdf" target="_blank" rel="noopener noreferrer">Honda</a>要求焗爐唔超過 60°C、30 分鐘，同時電池唔超過 40.5°C。所以車房做電車，<strong>唔可以用焗油車嘅慣常溫度直接照焗。</strong></p>
+
+      <h2>一覽表：邊類維修會唔會影響電池保養？</h2>
+      <table>
+        <thead><tr><th>維修類型</th><th>一般對電池保養影響</th><th>要留意</th></tr></thead>
+        <tbody>
+          <tr><td>花痕、補漆、局部噴油</td><td>一般冇影響</td><td>焗漆溫度跟車廠限制</td></tr>
+          <tr><td>門板、車翼凹痕鈑金</td><td>一般冇影響</td><td>拆件時唔好傷到線束同感應器</td></tr>
+          <tr><td>泵把、燈具、外觀件更換</td><td>一般冇影響</td><td>雷達、鏡頭位置要校正</td></tr>
+          <tr><td>改色膜、PPF、鍍膜</td><td>一般冇影響</td><td>唔涉及電池同高壓系統</td></tr>
+          <tr><td>車底、電池底殼有撞痕</td><td>可能有影響</td><td>先交原廠檢查電池</td></tr>
+          <tr><td>拆電池、高壓線、充電系統</td><td>有影響風險</td><td>交原廠或授權技師</td></tr>
+        </tbody>
+      </table>
+      <p>以上係根據 BYD 香港同 Tesla 公開條款嘅一般情況。唔同品牌、唔同年份嘅保養手冊會有分別，最終以你架車嘅保用手冊為準。</p>
+
+      <h2>交車身舖之前，可以問 4 條問題</h2>
+      <ul>
+        <li><strong>有冇處理開電動車？</strong>例如有冇做過 Tesla、BYD、Volvo 等電車嘅鈑金噴漆</li>
+        <li><strong>焗漆點處理？</strong>會唔會跟車廠嘅溫度同時間限制，定係用低溫或自然乾</li>
+        <li><strong>維修範圍會唔會掂到高壓部件？</strong>如果會，應該先講清楚由邊個處理</li>
+        <li><strong>有冇書面報價同維修記錄？</strong>相片、用料、工序有記錄，日後同原廠講保養都有憑有據</li>
+      </ul>
+
+      <h2>ZPAINT 點處理電動車車身維修</h2>
+      <p>我們處理過唔少電車鈑金噴漆，例如 <a href="/blog/byd-seal-dent-repair-respray">BYD Seal 前門車裙</a>、<a href="/blog/volvo-ex30-front-fender-dent-repair-respray">Volvo EX30 車頭</a>、<a href="/blog/tesla-model-y-dent-repair-respray">Tesla Model Y 後門</a>同<a href="/blog/tesla-model-s-rear-quarter-cut-weld-respray">Tesla Model S 沙板切割燒焊</a>。維修範圍只限車身外觀，唔會拆電池或高壓系統；如果睇到車底或電池位置有撞擊痕跡，我們會先建議你交原廠檢查，再安排外觀維修。</p>
+      <p>報價會寫明維修範圍、用料同工序，完工附相片記錄，車身維修提供<strong>1 年保養</strong>。想知 Tesla 專屬情況，可以再睇<a href="/blog/tesla-warranty-accident">Tesla 意外撞損後點處理先唔影響原廠保養</a>。</p>
+
+      <h2>常見問題</h2>
+      <h3>電動車喺第三方車房做鈑金噴漆，電池保養會唔會即刻失效？</h3>
+      <p>一般唔會。以香港 BYD 為例，官方條款寫明選擇第三方服務供應商維修，不會令原廠保養（包括電芯終身保修）失效，只有第三方服務直接損壞動力電池先會影響電芯保修。Tesla 香港亦表明非保養範圍嘅維修可以去車主自選嘅維修中心。</p>
+      <h3>邊類車身維修可能影響電池保養？</h3>
+      <p>主要有三類：電池底殼或高壓線有撞擊損傷但冇交原廠檢查；非授權人員拆開或維修電池、高壓系統；焗漆時溫度或時間超出車廠限制，令電池受熱損傷。</p>
+      <h3>電車焗漆會唔會焗壞電池？</h3>
+      <p>只要跟車廠限制就唔會。例如 Tesla 維修手冊列明，焗漆前車輛溫度要低於 35°C、焗漆最長 45 分鐘、期間高壓電池最高 60°C。唔同品牌限制唔同，車房應該先查清楚。</p>
+      <h3>撞到車底，係咪仲可以交 ZPAINT 處理？</h3>
+      <p>車身外觀部分可以，但如果電池底殼有花痕、凹位或者儀錶有警告，我們會建議先交原廠或授權中心檢查電池，確認冇事再做鈑金噴漆，咁保養記錄最清楚。</p>
+      <p style="font-size:.9em;opacity:.8">本文只作一般資訊參考，不構成法律意見；保養條款以各車廠及代理最新公布為準。</p>
+    </div>
+  </section>
+  <section class="section-tight" style="background:var(--surface-warm)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">延伸閱讀</span></div>
+      <div class="related-grid">
+        <article class="blog-card reveal">
+          <a class="blog-img" href="/blog/tesla-warranty-accident"><img src="https://zpaintcar.com/images/real/tesla-model-y-front.jpg" alt="Tesla Model Y 車頭" loading="lazy" /></a>
+          <div class="blog-card-body"><span class="blog-tag">Tesla專門</span><h3><a href="/blog/tesla-warranty-accident">Tesla意外撞損後點處理先唔影響原廠保養？</a></h3></div>
+        </article>
+        <article class="blog-card reveal">
+          <a class="blog-img" href="/blog/byd-seal-dent-repair-respray"><img src="https://zpaintcar.com/images/real/byd-seal-dent-repair-respray/03-byd-seal-side-after.jpg" alt="BYD Seal 鈑金噴漆完工" loading="lazy" /></a>
+          <div class="blog-card-body"><span class="blog-tag">電動車鈑金</span><h3><a href="/blog/byd-seal-dent-repair-respray">BYD Seal 海豹前門車裙鈑金＋噴漆</a></h3></div>
+        </article>
+        <article class="blog-card reveal">
+          <a class="blog-img" href="/blog/car-accident-insurance-claim-guide"><img src="https://zpaintcar.com/assets/news-mpv-repair.jpg" alt="事故車鈑金維修" loading="lazy" /></a>
+          <div class="blog-card-body"><span class="blog-tag">保險理賠</span><h3><a href="/blog/car-accident-insurance-claim-guide">香港事故車鈑金噴漆邊間好？保險理賠攻略</a></h3></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section-tight">
+    <div class="container">
+      <p>想先了解收費，可以睇我們公開嘅<a href="/spray-paint-price-hk">汽車噴油價錢</a>同<a href="/scratch-repair-price-hk">車身花痕修補價錢</a>。</p>
+      <div class="cta-band reveal">
+        <div>
+          <span class="eyebrow">快速查詢</span>
+          <h2>電車撞花、凹痕？傳張相，我們先幫你睇維修範圍。</h2>
+          <p>講埋車型同受損位置，我們會話你知邊部分可以直接整、邊部分建議先交原廠檢查。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/85292230077?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%9E%B6%E9%9B%BB%E5%8B%95%E8%BB%8A%E6%83%B3%E5%81%9A%E8%BB%8A%E8%BA%AB%E7%B6%AD%E4%BF%AE%EF%BC%8C%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%A0%B1%E5%83%B9%E3%80%82" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.5a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.83-.12-.42-.14-.96-.33-1.66-.64-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.77-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 1.99.89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.31.31-.13.6.18.29.8 1.32 1.72 2.13 1.18 1.05 2.17 1.38 2.47 1.53.3.15.48.13.66-.05.18-.18.77-.9.98-1.21.2-.3.41-.25.68-.15.28.1 1.75.82 2.05.97.3.15.5.22.57.34.08.13.08.75-.16 1.43Z"/></svg>WhatsApp 查詢電車維修</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© 2026 易錫汽車噴漆 ZPAINT．版權所有</div>
+    <div>汽車貼膜・PPF・鍍膜・維修・焗噴油・Tesla 維修</div>
+    <div><a href="/zpaint-reviews">客戶評價</a> · <a href="https://maps.app.goo.gl/jz8sTcndQreZYthc6" target="_blank" rel="noopener noreferrer">深水埗鴨寮街 29 號</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" type="button" aria-label="返回頂部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<a class="wa-float" href="https://wa.me/85292230077?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E9%A0%90%E7%B4%84%E6%B1%BD%E8%BB%8A%E6%9C%8D%E5%8B%99%E3%80%82" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 預約">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.5a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.83-.12-.42-.14-.96-.33-1.66-.64-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.01 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.77-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 1.99.89 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.31.31-.13.6.18.29.8 1.32 1.72 2.13 1.18 1.05 2.17 1.38 2.47 1.53.3.15.48.13.66-.05.18-.18.77-.9.98-1.21.2-.3.41-.25.68-.15.28.1 1.75.82 2.05.97.3.15.5.22.57.34.08.13.08.75-.16 1.43Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+<script src="common.js"></script></body>
+</html>

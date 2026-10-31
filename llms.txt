@@ -35,6 +35,7 @@
 ## Tesla 案例與指南
 
 - [Tesla 維修指南](https://zpaintcar.com/blog/tesla-repair-guide): Tesla 車主保養／維修須知
+- [電車車身維修與電池保養](https://zpaintcar.com/blog/ev-body-repair-battery-warranty): 第三方鈑金噴漆對電池保養嘅影響
 - [Tesla 事故與原廠保養](https://zpaintcar.com/blog/tesla-warranty-accident): 事故後保修影響
 - [Tesla Model Y 啞光灰改色 wrap](https://zpaintcar.com/blog/tesla-model-y-matte-grey-wrap): 全車改色案例
 - [Tesla Model Y 凹痕修復＋噴漆](https://zpaintcar.com/blog/tesla-model-y-dent-repair-respray): 鈑金噴漆案例
